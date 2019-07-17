@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "run container",
+            "type": "shell",
+            "command": "powershell .\\launchDebugger.ps1 ;",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "options": {
+                "cwd": "${workspaceRoot}"
+            }
+        },
+        {
+            "label": "stop container",
+            "type": "shell",
+            "command": "docker rm test.debug -f",
+            "presentation": {
+                "reveal": "silent"
+            }
+        }
+    ]
+}

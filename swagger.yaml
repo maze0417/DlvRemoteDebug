@@ -1,0 +1,37 @@
+swagger: "2.0"
+info:
+  description: "test"
+  version: "1.0.0"
+  title: "Hello API"
+  contact:
+    email: "chris.hung@afusion.com"
+host: "localhost:3000"
+basePath: "/v1"
+tags:
+- name: "hello"
+  description: "say hello"
+schemes:
+- "https"
+- "http"
+paths:
+  /hello/{name}:
+    get:
+      tags:
+      - "hello"
+      summary: "say hello to someone"
+      description: ""
+      operationId: "addPet"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "name"
+        description: "someone's name"
+        required: true
+      responses:
+        405:
+          description: "Invalid input"

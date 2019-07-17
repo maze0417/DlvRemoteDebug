@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Connect to server",
+            "type": "go",
+            "request": "attach",
+            "mode": "remote",
+            "remotePath": "/debug/",
+            //"remotePath": "/",
+            "port": 40000,
+            "host": "localhost",
+            "showLog": true,
+              "preLaunchTask": "run container",
+              //"postDebugTask": "stop container",
+             
+        },
+        // {
+        //     "type": "PowerShell",
+        //     "request": "launch",
+        //     "name": "RunDocker",
+        //     "script": "./launchDebugger.ps1",
+        //     //"args": ["exec"," test.debug","dlv","debug","/debug/main.go","--headless=true","--listen=:40000","--api-version=2"],
+        //     //"cwd": "${file}",
+        //     //  "preLaunchTask": "run container",
+        //       "postDebugTask": "stop container"
+        // },
+    ],
+    "compounds": [
+        {
+            "name": "run & debug",
+            // "configurations": [ "RunDocker","Connect to server"]
+            "configurations": ["Connect to server"]
+        }
+    ]
+}
