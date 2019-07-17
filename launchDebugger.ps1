@@ -3,9 +3,9 @@ $containerName ="test.debug"
 If ((docker image list | select-string -pattern 'debugger').length -eq 0) {
 	docker build -f Dockerfile.debugger -t debugger:1.0 .
 }
-If ((docker ps -a -f name=$containerName).length -gt 0){
-	docker rm $containerName -f
-}
+# If ((docker ps -a -f name=$containerName).length -gt 0){
+# 	docker rm $containerName -f
+# }
 
 
 $pkgPathVol = $env:GOPATH + "\pkg\:/go/pkg/"
@@ -22,7 +22,7 @@ powershell $cmd
 while ($true)
 {
 	$s = docker logs test.debug 
-	Write-Host($s)
+	
 	if ($s.length -gt 0)
 	{
 		Write-Host("dlv started from log : $s")

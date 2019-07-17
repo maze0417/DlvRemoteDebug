@@ -7,8 +7,7 @@ WORKDIR /debug/
 
 EXPOSE 3000 40000
 
-#CMD dlv debug --headless --listen=:40000 --api-version=2doc --log
 ENTRYPOINT ["dlv", "debug", "--listen=:40000", "--headless=true", "--api-version=2", "--log"]
 
-#ENTRYPOINT ["/bin/sh","-c"]
+
 

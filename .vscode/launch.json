@@ -15,7 +15,7 @@
             "host": "localhost",
             "showLog": true,
               "preLaunchTask": "run container",
-              //"postDebugTask": "stop container",
+              "postDebugTask": "stop container",
              
         },
         // {
